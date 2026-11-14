@@ -326,8 +326,9 @@ canvas#canvas {
       </div>
       <span>India</span>
     </div>
-    <h1>India Job Market Visualizer <a class="gh" href="https://github.com/PsProsen-Dev/India-Job-Market-Visualizer-By-OpenCode-CLI">GitHub</a></h1>
-    <p>This is a research tool that visualizes <b>occupations</b> from India's <b>Periodic Labour Force Survey (PLFS)</b>, covering <b>123,888 workers</b> across the Indian economy. Each rectangle's <b>area</b> is proportional to total employment. <b>Color</b> shows the selected metric &mdash; toggle between projected growth outlook, median salary, education levels, and AI exposure.</p>
+    <h1>India Job Market Visualizer <a class="gh" href="https://github.com/PsProsen-Dev/India-Job-Market-Visualizer">GitHub</a></h1>
+    <p>This is a research tool that visualizes <b>occupations</b> from India's <b>Periodic Labour Force Survey (PLFS)</b>, covering <b><span id="plfsSample">123,888</span> workers</b> across the Indian economy. Each rectangle's <b>area</b> is proportional to total employment. <b>Color</b> shows the selected metric &mdash; toggle between projected growth outlook, median salary, education levels, and AI exposure.</p>
+    <p><span id="dataAsOf">Data as of 14 Nov 2026 <!-- DATA-AS-OF --></span></p>
     <p><b>Data source:</b> PLFS (Periodic Labour Force Survey) from MOSPI. Occupation codes based on <a href="https://dge.gov.in/dge/hi/nco-2015">NCO 2015</a>. AI exposure scores are estimated based on occupation category.</p>
     <p><b>Note:</b> This is an experimental tool. Data has sampling limitations.</p>
   </div>
@@ -683,6 +684,7 @@ fetch("data.json")
   .then(r => r.json())
   .then(d => {
     data = d;
+    document.getElementById("plfsSample").textContent = d.reduce((s, x) => s + (x.jobs || 0), 0).toLocaleString("en-IN");
     layout();
     draw();
     updateStats();
@@ -810,7 +812,8 @@ function updateStats() {
     let graduatePlus = 0, noSchool = 0;
     for (const d of data) {
       const edu = d.education || {};
-      if (d.jobs && (edu["Graduate"] > 15 || edu["Post graduate"] > 10)) graduatePlus += d.jobs;
+      const pgShare = Object.entries(edu).filter(([k]) => k.startsWith("Post graduate")).reduce((s, [, v]) => s + (+v || 0), 0);
+      if (d.jobs && (edu["Graduate"] > 15 || pgShare > 10)) graduatePlus += d.jobs;
       if (d.jobs && (edu["Not literate"] > 25)) noSchool += d.jobs;
     }
     document.getElementById("block2").innerHTML = `<h3>Graduate+ workers</h3><div class="stat-big">${(graduatePlus / 100000).toFixed(1)}L</div>`;

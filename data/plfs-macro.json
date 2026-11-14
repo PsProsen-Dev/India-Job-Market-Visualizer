@@ -1,0 +1,192 @@
+{
+  "source": "PLFS (NSO/MoSPI) via eSankhyiki API https://api.mospi.gov.in/api/plfs/getData",
+  "source_url": "https://esankhyiki.mospi.gov.in/",
+  "vintage": "Quarterly bulletin Jul\u2013Sep 2026, released 10 Nov 2026",
+  "fetched_at": "2026-11-14T04:24:59+00:00",
+  "coverage": "All India, person, age 15+, rural+urban, Current Weekly Status (CWS), revamped series from Apr 2025",
+  "note": "Live browser fetch is blocked by the API (403 CORS blocked for non-MoSPI origins); this is a baked snapshot refreshed manually. Revamped series is not comparable with pre-2025 rounds.",
+  "latest": {
+    "quarter": "2026 Jul-Sep",
+    "LFPR": 55.5,
+    "WPR": 52.7,
+    "UR": 5.1
+  },
+  "quarterly": [
+    {
+      "quarter": "2025 Apr-Jun",
+      "LFPR": 55.0,
+      "WPR": 52.0,
+      "UR": 5.4
+    },
+    {
+      "quarter": "2025 Jul-Sep",
+      "LFPR": 55.1,
+      "WPR": 52.2,
+      "UR": 5.2
+    },
+    {
+      "quarter": "2025 Oct-Dec",
+      "LFPR": 55.8,
+      "WPR": 53.1,
+      "UR": 4.8
+    },
+    {
+      "quarter": "2026 Apr-Jun",
+      "LFPR": 54.6,
+      "WPR": 51.7,
+      "UR": 5.4
+    },
+    {
+      "quarter": "2026 Jan-Mar",
+      "LFPR": 55.5,
+      "WPR": 52.8,
+      "UR": 5.0
+    },
+    {
+      "quarter": "2026 Jul-Sep",
+      "LFPR": 55.5,
+      "WPR": 52.7,
+      "UR": 5.1
+    }
+  ],
+  "monthly_ur": [
+    {
+      "month": "2025-04",
+      "UR": 5.1
+    },
+    {
+      "month": "2025-05",
+      "UR": 5.6
+    },
+    {
+      "month": "2025-06",
+      "UR": 5.6
+    },
+    {
+      "month": "2025-07",
+      "UR": 5.2
+    },
+    {
+      "month": "2025-08",
+      "UR": 5.1
+    },
+    {
+      "month": "2025-09",
+      "UR": 5.2
+    },
+    {
+      "month": "2025-10",
+      "UR": 5.2
+    },
+    {
+      "month": "2025-11",
+      "UR": 4.7
+    },
+    {
+      "month": "2025-12",
+      "UR": 4.8
+    },
+    {
+      "month": "2026-01",
+      "UR": 5.0
+    },
+    {
+      "month": "2026-02",
+      "UR": 4.9
+    },
+    {
+      "month": "2026-04",
+      "UR": 5.2
+    },
+    {
+      "month": "2026-05",
+      "UR": 5.5
+    },
+    {
+      "month": "2026-06",
+      "UR": 5.5
+    },
+    {
+      "month": "2026-07",
+      "UR": 5.1
+    },
+    {
+      "month": "2026-08",
+      "UR": 5.0
+    },
+    {
+      "month": "2026-09",
+      "UR": 5.0
+    }
+  ],
+  "monthly_lfpr": [
+    {
+      "month": "2025-04",
+      "LFPR": 55.6
+    },
+    {
+      "month": "2025-05",
+      "LFPR": 54.8
+    },
+    {
+      "month": "2025-06",
+      "LFPR": 54.2
+    },
+    {
+      "month": "2025-07",
+      "LFPR": 54.9
+    },
+    {
+      "month": "2025-08",
+      "LFPR": 55.0
+    },
+    {
+      "month": "2025-09",
+      "LFPR": 55.3
+    },
+    {
+      "month": "2025-10",
+      "LFPR": 55.4
+    },
+    {
+      "month": "2025-11",
+      "LFPR": 55.8
+    },
+    {
+      "month": "2025-12",
+      "LFPR": 56.1
+    },
+    {
+      "month": "2026-01",
+      "LFPR": 55.9
+    },
+    {
+      "month": "2026-02",
+      "LFPR": 55.9
+    },
+    {
+      "month": "2026-04",
+      "LFPR": 55.0
+    },
+    {
+      "month": "2026-05",
+      "LFPR": 54.4
+    },
+    {
+      "month": "2026-06",
+      "LFPR": 54.4
+    },
+    {
+      "month": "2026-07",
+      "LFPR": 55.4
+    },
+    {
+      "month": "2026-08",
+      "LFPR": 55.6
+    },
+    {
+      "month": "2026-09",
+      "LFPR": 55.5
+    }
+  ]
+}

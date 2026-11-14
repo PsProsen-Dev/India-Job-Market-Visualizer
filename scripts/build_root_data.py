@@ -1,11 +1,19 @@
 """
-Build a compact JSON for the website by merging India occupation stats with AI exposure scores.
+Build the ROOT data.json (whole-economy PLFS occupations) by merging India
+occupation stats with AI exposure scores.
 
-Reads india_occupations_stats.json (for stats) and india_scores.json (for AI exposure).
-Writes site/data.json.
+Reads data/india_occupations_stats.json (for stats) and data/india_scores.json
+(for AI exposure). Writes data.json at the REPO ROOT (the 121-record PLFS list).
+
+This script used to be named build_site_data.py and wrote to site/data.json —
+that was a live overwrite trap: site/data.json is the /site/ page's object-shaped
+dataset, and writing the PLFS list over it would destroy it. Do NOT point this
+script at site/data.json. The canonical build (scripts/build_canonical.py) now
+generates all three data.json files from data/canonical.json; this script is
+kept only as the documented PLFS-pipeline step it originally was.
 
 Usage:
-    python build_site_data.py
+    python scripts/build_root_data.py
 """
 
 import json
@@ -15,7 +23,6 @@ import os
 def main():
     base_dir = os.path.dirname(os.path.dirname(__file__))
     data_dir = os.path.join(base_dir, "data")
-    site_dir = os.path.join(base_dir, "site")
 
     # Load AI exposure scores
     scores_file = os.path.join(data_dir, "india_scores.json")
@@ -77,11 +84,22 @@ def main():
     # Sort by employment count (largest first)
     data.sort(key=lambda x: x.get("jobs", 0), reverse=True)
 
-    # Ensure site directory exists
-    os.makedirs(site_dir, exist_ok=True)
-
-    # Write the data file
-    output_file = os.path.join(site_dir, "data.json")
+    # GUARD (H-1): never write the PLFS list over the /site/ object dataset.
+    # The root target must be a JSON list (or absent); the site file is a JSON
+    # object with marketStats/roles keys. Refuse if the target parses as the
+    # site object shape, and refuse if the payload is not a list.
+    output_file = os.path.join(base_dir, "data.json")
+    if os.path.exists(output_file):
+        with open(output_file) as f:
+            existing = json.load(f)
+        if isinstance(existing, dict) and ("marketStats" in existing or "roles" in existing):
+            raise SystemExit(
+                "REFUSING TO WRITE: target data.json parses as the /site/ object "
+                "dataset (has marketStats/roles). This script writes the root PLFS "
+                "list only. Aborting so site/data.json is not destroyed."
+            )
+    if not isinstance(data, list):
+        raise SystemExit("REFUSING TO WRITE: payload is not a list of occupations.")
     with open(output_file, "w") as f:
         json.dump(data, f)
 

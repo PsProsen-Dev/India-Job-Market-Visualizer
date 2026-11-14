@@ -1,88 +1,1659 @@
 {
-  "meta": {
-    "title": "India Jobs Market Visualizer",
-    "subtitle": "Karpathy-style treemap for India's 2024-2025 tech labour market",
-    "year": "FY2025 / 2025",
-    "currency": "INR LPA",
-    "methodology": "Static, auditable dataset assembled from the provided India tech labour-market research. Areas are approximate workforce demand weights; colors are driven by selectable metrics. AI exposure is heuristic and indicates how much AI may reshape work, not whether a job disappears.",
-    "lastUpdated": "2026-04-30",
-    "sources": [
-      "NASSCOM Strategic Review 2025: tech industry revenue ~$282.6B and workforce ~5.8M",
-      "Naukri JobSpeak 2025: AI/ML hiring +25% to +54% YoY across months",
-      "GCC market summaries: 1,700+ centers, ~2.4M workers, six Tier-1 city concentration",
-      "Salary guides and public compensation aggregators referenced in the project research PDF"
-    ]
+  "cities": [
+    {
+      "city": "Bengaluru",
+      "gcc": 626,
+      "growth": 11,
+      "salary": 22,
+      "share": 24,
+      "specialization": "Deep tech, AI, ER&D, startups"
+    },
+    {
+      "city": "Hyderabad",
+      "gcc": 253,
+      "growth": 18,
+      "salary": 20,
+      "share": 16,
+      "specialization": "AI, BFSI, pharma, SaaS, GCCs"
+    },
+    {
+      "city": "Pune",
+      "gcc": 253,
+      "growth": 10,
+      "salary": 18,
+      "share": 12,
+      "specialization": "Automotive tech, enterprise SaaS, industrial software"
+    },
+    {
+      "city": "Chennai",
+      "gcc": 213,
+      "growth": 9,
+      "salary": 14,
+      "share": 10,
+      "specialization": "Automotive, SaaS, manufacturing tech"
+    },
+    {
+      "city": "Delhi NCR",
+      "gcc": 331,
+      "growth": 8,
+      "salary": 19,
+      "share": 14,
+      "specialization": "BFSI, consulting, e-commerce"
+    },
+    {
+      "city": "Mumbai",
+      "gcc": 285,
+      "growth": 7,
+      "salary": 22,
+      "share": 9,
+      "specialization": "BFSI, fintech, capital markets"
+    },
+    {
+      "city": "Tier-2 Hubs",
+      "gcc": 156,
+      "growth": 14,
+      "salary": 10,
+      "share": 15,
+      "specialization": "Cost-led expansion and remote delivery"
+    }
+  ],
+  "epfo": {
+    "coverage": "Apr 2018 \u2013 Sep 2025 (provisional monthly payroll estimates)",
+    "label": "Series discontinued after Sep 2025 \u2014 no EPFO payroll data published since.",
+    "lastDataMonth": "2025-09",
+    "lastPressRelease": "23 Sep 2025 (Jul 2025 data)",
+    "note": "Only the two verified monthly points below are baked in (Jun 2025 re-verified 14 Nov 2026 against the Labour Ministry statement via PTI/ET/CNBC; Jul 2025 from the last PIB release). The full Apr 2018\u2013Sep 2025 series is NOT republished here. Re-check the EPFO page quarterly in case publication resumes. Never use EPFO as current data.",
+    "points": [
+      {
+        "month": "2025-06",
+        "netAdditionsLakh": 21.89,
+        "note": "Series high since Apr 2018; +9.14% MoM, +13.46% YoY; 10.62 lakh new subscribers.",
+        "source": "EPFO provisional payroll data via Labour Ministry statement (PTI)",
+        "sourceUrl": "https://hr.economictimes.indiatimes.com/news/trends/epfo-registers-record-net-addition-of-nearly-22-lakh-members-in-jun-up-13-46-pc/123421477"
+      },
+      {
+        "month": "2025-07",
+        "netAdditionsLakh": 21.04,
+        "note": "Last press-released figure (PIB release 23 Sep 2025); +5.55% YoY per dossier.",
+        "source": "EPFO provisional payroll data, last PIB press release 23 Sep 2025",
+        "sourceUrl": "https://startupfeed.in/epfo-monthly-payroll-data-stopped-one-year/"
+      }
+    ],
+    "status": "closed"
   },
+  "indices": [
+    {
+      "definition": "New job listings + recruiter searches on Naukri.com. Base Jul 2008 = 1,000.",
+      "points": [
+        {
+          "aiMlYoyPct": null,
+          "index": 2550,
+          "month": 1,
+          "note": "Jan-2025 YoY unverified; left null.",
+          "year": 2025,
+          "yoyPct": null
+        },
+        {
+          "aiMlYoyPct": 21,
+          "index": 2890,
+          "month": 2,
+          "year": 2025,
+          "yoyPct": 4
+        },
+        {
+          "aiMlYoyPct": 25,
+          "index": 2618,
+          "month": 3,
+          "year": 2025,
+          "yoyPct": -1
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 2878,
+          "month": 4,
+          "year": 2025,
+          "yoyPct": 9
+        },
+        {
+          "aiMlYoyPct": 25,
+          "index": 2807,
+          "month": 5,
+          "note": "May-2025 YoY unverified; left null.",
+          "year": 2025,
+          "yoyPct": null
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 2854,
+          "month": 6,
+          "year": 2025,
+          "yoyPct": 11
+        },
+        {
+          "aiMlYoyPct": 41,
+          "index": 3074,
+          "month": 7,
+          "year": 2025,
+          "yoyPct": 7
+        },
+        {
+          "aiMlYoyPct": 54,
+          "index": 2664,
+          "month": 8,
+          "note": "Aug-2025 AI/ML +54% \u2014 the combined AI/ML print; do not confuse with Aug-2026 +31%.",
+          "year": 2025,
+          "yoyPct": 3
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 3002,
+          "month": 9,
+          "note": "Sep-2025 YoY unverified; left null.",
+          "year": 2025,
+          "yoyPct": null
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 2480,
+          "month": 10,
+          "note": "Diwali in Oct 2025 (festive clustering).",
+          "year": 2025,
+          "yoyPct": -9
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": null,
+          "month": 11,
+          "note": "Nov-2025 index value unverified; YoY +23% only.",
+          "year": 2025,
+          "yoyPct": 23
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 3001,
+          "month": 12,
+          "year": 2025,
+          "yoyPct": 13
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": 2637,
+          "month": 1,
+          "note": "Jan-2026 AI/ML YoY unverified; left null.",
+          "year": 2026,
+          "yoyPct": 3
+        },
+        {
+          "aiMlYoyPct": 49,
+          "index": 3233,
+          "month": 2,
+          "note": "AI/ML +49% overall; +40% within IT. Fresher hiring +17%.",
+          "year": 2026,
+          "yoyPct": 12
+        },
+        {
+          "aiMlYoyPct": 37,
+          "index": 2858,
+          "month": 3,
+          "note": "FY26 closes at +8% YoY overall, AI/ML +45% for the year.",
+          "year": 2026,
+          "yoyPct": 9
+        },
+        {
+          "aiMlYoyPct": 32,
+          "index": 3045,
+          "month": 4,
+          "year": 2026,
+          "yoyPct": 6
+        },
+        {
+          "aiMlYoyPct": 22,
+          "index": 2836,
+          "month": 5,
+          "note": "YoY +1% is derived (2836 vs 2807); Naukri published no %.",
+          "year": 2026,
+          "yoyPct": 1
+        },
+        {
+          "aiMlYoyPct": 25,
+          "index": 3027,
+          "month": 6,
+          "year": 2026,
+          "yoyPct": 6
+        },
+        {
+          "aiMlYoyPct": 33,
+          "index": 3227,
+          "month": 7,
+          "year": 2026,
+          "yoyPct": 5
+        },
+        {
+          "aiMlYoyPct": 31,
+          "index": 3028,
+          "month": 8,
+          "note": "MoM -6% vs Jul; festive-calendar caveat per Info Edge.",
+          "year": 2026,
+          "yoyPct": 14
+        },
+        {
+          "aiMlYoyPct": 20,
+          "index": 3053,
+          "month": 9,
+          "year": 2026,
+          "yoyPct": 2
+        },
+        {
+          "aiMlYoyPct": 32,
+          "index": 2836,
+          "month": 10,
+          "note": "MoM DOWN from Sep 3,053 \u2014 Oct YoY flattered by the Oct-2025 Diwali base.",
+          "year": 2026,
+          "yoyPct": 14
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": null,
+          "month": 11,
+          "note": "Not yet published at build time (14 Nov 2026).",
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "aiMlYoyPct": null,
+          "index": null,
+          "month": 12,
+          "note": "Not yet published at build time (14 Nov 2026).",
+          "year": 2026,
+          "yoyPct": null
+        }
+      ],
+      "provider": "naukri",
+      "seriesName": "Naukri JobSpeak",
+      "source": "Naukri JobSpeak monthly releases (Naukri blog / Info Edge)",
+      "sourceUrl": "https://www.naukri.com/blog/tag/naukri-jobspeak/"
+    },
+    {
+      "definition": "Online job postings on the foundit platform (white-collar hiring).",
+      "points": [
+        {
+          "index": 384,
+          "month": 12,
+          "note": "Last verified pre-2026 level (Dec-2025 edition).",
+          "year": 2025,
+          "yoyPct": 15
+        },
+        {
+          "index": 377,
+          "month": 1,
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": 404,
+          "month": 2,
+          "note": "2026 peak.",
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": 385,
+          "month": 3,
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": 370,
+          "month": 4,
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": 348,
+          "month": 5,
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": 331,
+          "month": 6,
+          "note": "YoY via HireHo summary of the Jun-2026 tracker (secondary).",
+          "year": 2026,
+          "yoyPct": -9
+        },
+        {
+          "index": 314,
+          "month": 7,
+          "year": 2026,
+          "yoyPct": -12
+        },
+        {
+          "index": 330,
+          "momPct": 5,
+          "month": 8,
+          "note": "MoM +5% after five months of decline (Financial Express).",
+          "year": 2026,
+          "yoyPct": null
+        },
+        {
+          "index": null,
+          "momPct": 2,
+          "month": 9,
+          "note": "Sep-2026 index LEVEL not published in coverage found; YoY -11%, MoM +2% (foundit carousel).",
+          "year": 2026,
+          "yoyPct": -11
+        },
+        {
+          "index": null,
+          "month": 10,
+          "note": "Not yet published at build time (14 Nov 2026).",
+          "year": 2026,
+          "yoyPct": null
+        }
+      ],
+      "provider": "foundit",
+      "seriesName": "foundit Insights Tracker",
+      "source": "foundit Insights Tracker (monthly)",
+      "sourceUrl": "https://www.foundit.in/"
+    }
+  ],
   "marketStats": {
-    "techRevenueUsdBn": 282.6,
-    "techWorkforceMn": 5.8,
-    "netNewHires": 126000,
-    "exportsUsdBn": 224,
-    "domesticUsdBn": 58.2,
-    "gccCenters": 1700,
-    "gccWorkforceMn": 2.4,
+    "aiHiringYoYRange": "20-37%",
+    "aiHiringYoYRange2025": "25-54%",
+    "aiRevenueUsdBnMax": 12,
+    "aiRevenueUsdBnMin": 10,
     "aiTalentDemand2027Mn": 1.25,
-    "aiHiringYoYRange": "25-54%",
-    "fy26ProjectedWorkforceMn": 6.0
+    "bpmRevenueUsdBn": 59,
+    "domesticUsdBn": 69,
+    "erdRevenueUsdBn": 63,
+    "exportsUsdBn": 246,
+    "fy26AiMlHiringGrowthYoYpct": 45,
+    "fy26HiringGrowthYoYpct": 8,
+    "fy26ProjectedWorkforceMn": 6.0,
+    "gccCenters": 2117,
+    "gccRevenueUsdBn": 98.4,
+    "gccUnits": 3728,
+    "gccWorkforceMn": 2.36,
+    "hardwareRevenueUsdBn": 21,
+    "itServicesRevenueUsdBn": 149,
+    "netNewHires": 135000,
+    "softwareProductsRevenueUsdBn": 23,
+    "techRevenueGrowthYoYpct": 6.1,
+    "techRevenueUsdBn": 315.0,
+    "techWorkforceMn": 6.0
+  },
+  "meta": {
+    "currency": "INR LPA",
+    "generatedFrom": "data/canonical.json (generated file \u2014 do not hand-edit; run python scripts/build_canonical.py)",
+    "lastUpdated": "2026-11-14",
+    "methodology": "Static, auditable dataset assembled from NASSCOM, Naukri JobSpeak, foundit, PLFS (MoSPI) and salary surveys. Areas are workforce-share allocations of the 6.0M tech workforce; colors are driven by selectable metrics. AI exposure is heuristic and indicates how much AI may reshape work, not whether a job disappears. Naukri and foundit indices are shown side by side and never blended \u2014 they measure different platforms.",
+    "plfsSnapshot": {
+      "latest": {
+        "LFPR": 55.5,
+        "UR": 5.1,
+        "WPR": 52.7,
+        "quarter": "2026 Jul-Sep"
+      },
+      "note": "Live browser fetch is blocked by the API (403 CORS blocked for non-MoSPI origins); this baked snapshot is the macro source. Refresh with scripts/refresh_plfs_snapshot.py.",
+      "source": "PLFS quarterly bulletin, MoSPI (released 10 Nov 2026)",
+      "vintage": "Jul\u2013Sep 2026"
+    },
+    "sources": [
+      "NASSCOM Strategic Review 2026 (marketStats)",
+      "NASSCOM\u2013Zinnov GCC Landscape FY2026 (marketStats.gccCenters, cities.gccCenters)",
+      "Naukri JobSpeak (monthly releases, Jan 2025\u2013Oct 2026) (indices.naukri, techRoles.growthPct, naukriMonthlyDetail)",
+      "foundit Insights Tracker (Dec 2025, Jun\u2013Sep 2026) (indices.foundit, founditSep2026, founditGcc)",
+      "PLFS Jul\u2013Sep 2026 (MoSPI, released 10 Nov 2026) (macro.plfs, occupations)",
+      "ManpowerGroup Employment Outlook Survey Q4 2026 (macro.intent.manpower)",
+      "TeamLease Employment Outlook Report HY2 FY27 (macro.intent.teamLease)",
+      "Randstad Annual Salary Trends Report 2025\u201326 (macro.randstadBenchmarks, techRoles.salaryBenchmarks)",
+      "TeamLease Digital GCC findings (Oct 2026) (techRoles.fresherSalaryLpa)",
+      "EPFO provisional payroll data (Jun\u2013Jul 2025) (macro.epfo)",
+      "Financial Express \u2014 foundit hiring index levels Jan\u2013Aug 2026 (indices.foundit (index levels))"
+    ],
+    "subtitle": "Karpathy-style treemap for India's FY2026 tech labour market",
+    "title": "India Jobs Market Visualizer",
+    "year": "FY2026 / 2026"
   },
   "monthlyIndex": [
-    {"month":"Jan","index":2550,"yoy":4,"aiMlYoy":null},
-    {"month":"Feb","index":null,"yoy":4,"aiMlYoy":21},
-    {"month":"Mar","index":2618,"yoy":-1,"aiMlYoy":25},
-    {"month":"Apr","index":2878,"yoy":9,"aiMlYoy":null},
-    {"month":"May","index":2807,"yoy":0,"aiMlYoy":25},
-    {"month":"Jun","index":2854,"yoy":11,"aiMlYoy":null},
-    {"month":"Jul","index":3074,"yoy":7,"aiMlYoy":41},
-    {"month":"Aug","index":2664,"yoy":3,"aiMlYoy":54},
-    {"month":"Oct","index":2480,"yoy":null,"aiMlYoy":null},
-    {"month":"Dec","index":3001,"yoy":13,"aiMlYoy":null}
-  ],
-  "cities": [
-    {"city":"Bengaluru","share":24,"gcc":880,"salary":22,"growth":11,"specialization":"Deep tech, AI, ER&D, startups"},
-    {"city":"Hyderabad","share":16,"gcc":355,"salary":20,"growth":18,"specialization":"AI, BFSI, pharma, SaaS, GCCs"},
-    {"city":"Pune","share":12,"gcc":355,"salary":18,"growth":10,"specialization":"Automotive tech, enterprise SaaS, industrial software"},
-    {"city":"Chennai","share":10,"gcc":300,"salary":14,"growth":9,"specialization":"Automotive, SaaS, manufacturing tech"},
-    {"city":"Delhi NCR","share":14,"gcc":465,"salary":19,"growth":8,"specialization":"BFSI, consulting, e-commerce"},
-    {"city":"Mumbai","share":9,"gcc":400,"salary":22,"growth":7,"specialization":"BFSI, fintech, capital markets"},
-    {"city":"Tier-2 Hubs","share":15,"gcc":220,"salary":10,"growth":14,"specialization":"Cost-led expansion and remote delivery"}
+    {
+      "aiMlYoy": null,
+      "index": 2637,
+      "month": "Jan",
+      "note": "Jan-2026 AI/ML YoY unverified; left null.",
+      "year": 2026,
+      "yoy": 3
+    },
+    {
+      "aiMlYoy": 49,
+      "index": 3233,
+      "month": "Feb",
+      "note": "AI/ML +49% overall; +40% within IT. Fresher hiring +17%.",
+      "year": 2026,
+      "yoy": 12
+    },
+    {
+      "aiMlYoy": 37,
+      "index": 2858,
+      "month": "Mar",
+      "note": "FY26 closes at +8% YoY overall, AI/ML +45% for the year.",
+      "year": 2026,
+      "yoy": 9
+    },
+    {
+      "aiMlYoy": 32,
+      "index": 3045,
+      "month": "Apr",
+      "year": 2026,
+      "yoy": 6
+    },
+    {
+      "aiMlYoy": 22,
+      "index": 2836,
+      "month": "May",
+      "note": "YoY +1% is derived (2836 vs 2807); Naukri published no %.",
+      "year": 2026,
+      "yoy": 1
+    },
+    {
+      "aiMlYoy": 25,
+      "index": 3027,
+      "month": "Jun",
+      "year": 2026,
+      "yoy": 6
+    },
+    {
+      "aiMlYoy": 33,
+      "index": 3227,
+      "month": "Jul",
+      "year": 2026,
+      "yoy": 5
+    },
+    {
+      "aiMlYoy": 31,
+      "index": 3028,
+      "month": "Aug",
+      "note": "MoM -6% vs Jul; festive-calendar caveat per Info Edge.",
+      "year": 2026,
+      "yoy": 14
+    },
+    {
+      "aiMlYoy": 20,
+      "index": 3053,
+      "month": "Sep",
+      "year": 2026,
+      "yoy": 2
+    },
+    {
+      "aiMlYoy": 32,
+      "index": 2836,
+      "month": "Oct",
+      "note": "MoM DOWN from Sep 3,053 \u2014 Oct YoY flattered by the Oct-2025 Diwali base.",
+      "year": 2026,
+      "yoy": 14
+    },
+    {
+      "aiMlYoy": null,
+      "index": null,
+      "month": "Nov",
+      "note": "Not yet published at build time (14 Nov 2026).",
+      "year": 2026,
+      "yoy": null
+    },
+    {
+      "aiMlYoy": null,
+      "index": null,
+      "month": "Dec",
+      "note": "Not yet published at build time (14 Nov 2026).",
+      "year": 2026,
+      "yoy": null
+    }
   ],
   "roles": [
-    {"id":"ai-engineer","title":"AI Engineer","category":"AI & Data","headcount":180000,"growth":41,"salary":20,"fresherSalary":8,"exposure":8.3,"demand":9.8,"remote":45,"city":"Bengaluru / Hyderabad","education":"Bachelor's+","skills":["LLMs","Python","RAG","MLOps"],"rationale":"Core work is digital and AI-assisted, but demand is expanding rapidly as companies build AI products. Exposure is high because tools reshape workflows, not because demand is weak."},
-    {"id":"ml-engineer","title":"Machine Learning Engineer","category":"AI & Data","headcount":220000,"growth":35,"salary":22,"fresherSalary":9,"exposure":8.1,"demand":9.4,"remote":42,"city":"Bengaluru / Hyderabad / Pune","education":"Bachelor's+","skills":["PyTorch","TensorFlow","Feature Stores","Model Serving"],"rationale":"The job is software-heavy and model-centric, so AI automates experimentation and coding. Demand remains strong where ML systems must be deployed reliably."},
-    {"id":"data-scientist","title":"Data Scientist","category":"AI & Data","headcount":350000,"growth":30,"salary":15,"fresherSalary":6,"exposure":8.7,"demand":9.0,"remote":48,"city":"Bengaluru / NCR / Mumbai","education":"Bachelor's+","skills":["Python","SQL","Statistics","GenAI Analytics"],"rationale":"Analysis, reporting and modeling are almost entirely digital and increasingly automatable. The strongest roles shift toward product judgment, causal reasoning and stakeholder ownership."},
-    {"id":"data-engineer","title":"Data Engineer","category":"AI & Data","headcount":320000,"growth":28,"salary":18,"fresherSalary":7,"exposure":7.2,"demand":9.1,"remote":40,"city":"Bengaluru / Hyderabad / Pune","education":"Bachelor's","skills":["Spark","Kafka","Snowflake","dbt"],"rationale":"AI assists coding and pipeline generation, but production data reliability and platform context keep human ownership important."},
-    {"id":"big-data-test-engineer","title":"Big Data Testing Engineer","category":"AI & Data","headcount":95000,"growth":26,"salary":14,"fresherSalary":5,"exposure":7.5,"demand":8.2,"remote":35,"city":"Hyderabad / Pune / Chennai","education":"Bachelor's","skills":["ETL Testing","Spark","SQL","Automation"],"rationale":"Test generation and validation can be accelerated by AI, but enterprise data quality remains domain-specific and integration-heavy."},
-    {"id":"software-developer","title":"Software Developer / SDE","category":"Software & Product","headcount":1200000,"growth":12,"salary":16,"fresherSalary":7,"exposure":9.0,"demand":8.7,"remote":36,"city":"Bengaluru / Hyderabad / NCR","education":"Bachelor's","skills":["Java","Python","System Design","APIs"],"rationale":"This is a fully digital occupation where coding assistants substantially change throughput. Demand may still rise because cheaper software creation expands the market."},
-    {"id":"full-stack-developer","title":"Full-Stack Developer","category":"Software & Product","headcount":620000,"growth":22,"salary":16,"fresherSalary":6,"exposure":8.8,"demand":8.8,"remote":42,"city":"Bengaluru / Pune / Chennai","education":"Bachelor's","skills":["React","Node.js","Databases","Cloud"],"rationale":"Frontend and backend implementation are highly AI-assistable. Higher-value work moves toward architecture, product reasoning and security-aware delivery."},
-    {"id":"backend-engineer","title":"Backend Engineer","category":"Software & Product","headcount":520000,"growth":14,"salary":18,"fresherSalary":7,"exposure":8.4,"demand":8.5,"remote":38,"city":"Bengaluru / Hyderabad / Pune","education":"Bachelor's","skills":["Java","Go","Microservices","Databases"],"rationale":"AI writes boilerplate and tests, but distributed-system reliability, performance and business rules remain harder to automate fully."},
-    {"id":"frontend-engineer","title":"Frontend Engineer","category":"Software & Product","headcount":390000,"growth":13,"salary":14,"fresherSalary":5,"exposure":8.9,"demand":7.9,"remote":45,"city":"Bengaluru / NCR / Remote","education":"Bachelor's","skills":["React","TypeScript","UI Systems","Accessibility"],"rationale":"UI generation is increasingly automated, making exposure very high. Differentiation shifts to design judgment, performance and product polish."},
-    {"id":"mobile-engineer","title":"Mobile App Engineer","category":"Software & Product","headcount":260000,"growth":11,"salary":15,"fresherSalary":6,"exposure":8.0,"demand":7.5,"remote":36,"city":"Bengaluru / NCR / Mumbai","education":"Bachelor's","skills":["Android","iOS","Flutter","React Native"],"rationale":"AI can generate common app screens and logic, but platform constraints, app quality and device testing keep the role moderately resilient."},
-    {"id":"product-manager","title":"Product Manager","category":"Software & Product","headcount":125000,"growth":16,"salary":32,"fresherSalary":12,"exposure":7.1,"demand":8.3,"remote":30,"city":"Bengaluru / Mumbai / NCR","education":"Bachelor's+","skills":["Product Strategy","Analytics","AI PM","Stakeholders"],"rationale":"Research, specs and analytics are AI-assisted, but prioritization, customer empathy and cross-functional influence require human judgment."},
-    {"id":"ux-designer","title":"UX / Product Designer","category":"Software & Product","headcount":120000,"growth":9,"salary":13,"fresherSalary":5,"exposure":8.6,"demand":7.2,"remote":40,"city":"Bengaluru / Mumbai / Remote","education":"Portfolio","skills":["Figma","Design Systems","Research","Prototyping"],"rationale":"Generative design tools produce variants quickly, increasing exposure. Senior designers remain valuable where user research and product taste matter."},
-    {"id":"cloud-engineer","title":"Cloud Engineer","category":"Cloud, DevOps & Security","headcount":410000,"growth":24,"salary":22,"fresherSalary":7,"exposure":7.0,"demand":9.0,"remote":34,"city":"Bengaluru / Hyderabad / Pune","education":"Bachelor's / Certifications","skills":["AWS","Azure","GCP","Kubernetes"],"rationale":"AI helps with IaC and troubleshooting, but cloud architecture, incidents and governance require accountable operators."},
-    {"id":"devops-engineer","title":"DevOps Engineer","category":"Cloud, DevOps & Security","headcount":330000,"growth":18,"salary":18,"fresherSalary":6,"exposure":7.3,"demand":8.5,"remote":33,"city":"Pune / Bengaluru / Hyderabad","education":"Bachelor's / Certifications","skills":["CI/CD","Terraform","Docker","Observability"],"rationale":"Automation is intrinsic to the role and AI adds another layer. Production ownership and incident response keep exposure below pure digital content roles."},
-    {"id":"sre","title":"Site Reliability Engineer","category":"Cloud, DevOps & Security","headcount":150000,"growth":20,"salary":24,"fresherSalary":8,"exposure":6.8,"demand":8.6,"remote":28,"city":"Bengaluru / Hyderabad / NCR","education":"Bachelor's","skills":["Reliability","Kubernetes","Linux","Incident Response"],"rationale":"AI improves diagnostics, but reliability work involves high-stakes systems, accountability and operational judgment."},
-    {"id":"cybersecurity-analyst","title":"Cybersecurity Analyst","category":"Cloud, DevOps & Security","headcount":210000,"growth":21,"salary":16,"fresherSalary":5,"exposure":6.5,"demand":9.2,"remote":25,"city":"Bengaluru / NCR / Mumbai","education":"Bachelor's / Certifications","skills":["SOC","SIEM","Threat Intel","Cloud Security"],"rationale":"AI automates triage and detection engineering, but adversarial dynamics and shortage of skilled professionals keep demand strong."},
-    {"id":"security-engineer","title":"Security Engineer","category":"Cloud, DevOps & Security","headcount":135000,"growth":22,"salary":26,"fresherSalary":8,"exposure":6.4,"demand":9.0,"remote":28,"city":"Bengaluru / Pune / NCR","education":"Bachelor's / Certifications","skills":["AppSec","IAM","Zero Trust","Pentesting"],"rationale":"AI helps attackers and defenders, increasing productivity but not eliminating expert review, architecture and accountability."},
-    {"id":"erp-consultant","title":"ERP / Enterprise Consultant","category":"IT Services & GCC","headcount":520000,"growth":7,"salary":12,"fresherSalary":4,"exposure":7.4,"demand":6.8,"remote":22,"city":"Bengaluru / Pune / Chennai","education":"Bachelor's","skills":["SAP","Oracle","Business Process","Integration"],"rationale":"Documentation, configuration guidance and testing are AI-assistable, while client-specific implementation and change management remain human-heavy."},
-    {"id":"qa-engineer","title":"QA / Test Automation Engineer","category":"IT Services & GCC","headcount":540000,"growth":6,"salary":10,"fresherSalary":4,"exposure":8.0,"demand":6.9,"remote":30,"city":"Bengaluru / Chennai / Pune","education":"Bachelor's","skills":["Selenium","Playwright","API Testing","Automation"],"rationale":"AI can generate tests and detect regressions, making routine QA highly exposed. Strategic quality engineering remains valuable."},
-    {"id":"it-support","title":"IT Support Specialist","category":"IT Services & GCC","headcount":680000,"growth":5,"salary":6,"fresherSalary":3.5,"exposure":6.9,"demand":6.2,"remote":20,"city":"Pan-India","education":"Diploma / Bachelor's","skills":["Helpdesk","Windows","Networking","ITSM"],"rationale":"Chatbots and self-healing tools reduce repetitive tickets, but physical device support and escalation handling remain necessary."},
-    {"id":"bpo-voice","title":"BPO / Customer Support Associate","category":"IT Services & GCC","headcount":950000,"growth":19,"salary":4.5,"fresherSalary":3,"exposure":7.9,"demand":7.4,"remote":32,"city":"Tier-2 / NCR / Bengaluru","education":"Graduate / English","skills":["CRM","Voice Process","Communication","Escalations"],"rationale":"Conversational AI can automate common support interactions. Complex escalation, empathy and regulated processes keep humans in the loop."},
-    {"id":"business-analyst","title":"Business Analyst","category":"IT Services & GCC","headcount":300000,"growth":10,"salary":12,"fresherSalary":5,"exposure":7.8,"demand":7.7,"remote":31,"city":"Bengaluru / Mumbai / NCR","education":"Bachelor's / MBA","skills":["Requirements","SQL","Process Mapping","Stakeholders"],"rationale":"AI drafts requirements and analyses data quickly, but stakeholder alignment and domain interpretation remain human-led."},
-    {"id":"gcc-engineering-manager","title":"GCC Engineering Manager","category":"IT Services & GCC","headcount":85000,"growth":18,"salary":45,"fresherSalary":null,"exposure":6.2,"demand":8.9,"remote":18,"city":"Bengaluru / Hyderabad / Chennai","education":"Bachelor's+","skills":["Leadership","Delivery","Architecture","Hiring"],"rationale":"Managerial reporting is AI-assisted, but hiring, execution ownership, mentoring and stakeholder trust are harder to replace."},
-    {"id":"automotive-software","title":"Automotive Software Engineer","category":"ER&D & Manufacturing Tech","headcount":180000,"growth":15,"salary":15,"fresherSalary":5,"exposure":7.1,"demand":8.0,"remote":18,"city":"Chennai / Pune / Bengaluru","education":"Bachelor's","skills":["Embedded C","AUTOSAR","ADAS","Testing"],"rationale":"Software components are AI-assistable, but safety, hardware integration and compliance lower exposure relative to web software."},
-    {"id":"embedded-engineer","title":"Embedded Systems Engineer","category":"ER&D & Manufacturing Tech","headcount":210000,"growth":12,"salary":14,"fresherSalary":5,"exposure":6.7,"demand":7.8,"remote":15,"city":"Bengaluru / Chennai / Pune","education":"Bachelor's","skills":["C/C++","RTOS","Firmware","Hardware Debug"],"rationale":"Code generation helps, but hardware constraints, lab debugging and real-time reliability create a physical-world moat."},
-    {"id":"semiconductor-vlsi","title":"VLSI / Semiconductor Engineer","category":"ER&D & Manufacturing Tech","headcount":110000,"growth":19,"salary":20,"fresherSalary":8,"exposure":6.9,"demand":8.7,"remote":20,"city":"Bengaluru / Hyderabad / Noida","education":"Bachelor's+","skills":["RTL","Verification","EDA","SystemVerilog"],"rationale":"EDA workflows benefit from AI, but chip design requires deep verification, toolchain expertise and high-cost error prevention."},
-    {"id":"manufacturing-automation","title":"Manufacturing Automation Engineer","category":"ER&D & Manufacturing Tech","headcount":140000,"growth":11,"salary":12,"fresherSalary":4.5,"exposure":5.5,"demand":7.2,"remote":8,"city":"Chennai / Pune / Gujarat","education":"Bachelor's / Diploma","skills":["PLC","SCADA","Robotics","Industrial IoT"],"rationale":"AI assists monitoring and maintenance, but plant-floor presence, equipment integration and safety reduce digital-only exposure."},
-    {"id":"fintech-engineer","title":"FinTech / BFSI Engineer","category":"BFSI & Enterprise","headcount":260000,"growth":13,"salary":22,"fresherSalary":7,"exposure":8.2,"demand":8.2,"remote":25,"city":"Mumbai / Bengaluru / NCR","education":"Bachelor's","skills":["Java","Payments","Risk","Cloud"],"rationale":"Financial software is digital and AI-assisted, but compliance, auditability and domain risk limit full automation."},
-    {"id":"risk-analyst","title":"Risk / Fraud Analyst","category":"BFSI & Enterprise","headcount":160000,"growth":9,"salary":11,"fresherSalary":5,"exposure":8.4,"demand":7.8,"remote":26,"city":"Mumbai / NCR / Bengaluru","education":"Bachelor's","skills":["SQL","Fraud Models","Excel","Investigation"],"rationale":"Pattern analysis and report writing are highly automatable. Human review remains important for exceptions, regulation and accountability."},
-    {"id":"salesforce-developer","title":"Salesforce / CRM Developer","category":"BFSI & Enterprise","headcount":170000,"growth":12,"salary":16,"fresherSalary":6,"exposure":7.9,"demand":7.8,"remote":34,"city":"Hyderabad / Bengaluru / Pune","education":"Bachelor's / Certifications","skills":["Salesforce","Apex","CRM","Integration"],"rationale":"AI accelerates configuration and code, while enterprise integrations and business-process nuance preserve demand."},
-    {"id":"technical-writer","title":"Technical Writer","category":"Digital Operations","headcount":70000,"growth":3,"salary":10,"fresherSalary":4,"exposure":9.2,"demand":5.8,"remote":55,"city":"Bengaluru / Pune / Remote","education":"Bachelor's","skills":["Docs","APIs","Markdown","Information Architecture"],"rationale":"Drafting and summarization are core AI strengths. The surviving premium is in technical accuracy, structure and developer empathy."},
-    {"id":"digital-marketing","title":"Digital Marketing Specialist","category":"Digital Operations","headcount":300000,"growth":11,"salary":8,"fresherSalary":3.5,"exposure":8.8,"demand":7.1,"remote":45,"city":"Mumbai / Bengaluru / NCR","education":"Any Graduate","skills":["SEO","Ads","Analytics","Content"],"rationale":"Content, keyword research and campaign variants are highly automatable. Strategy, brand judgment and conversion ownership become more important."},
-    {"id":"content-moderator","title":"Content Moderator","category":"Digital Operations","headcount":180000,"growth":5,"salary":4,"fresherSalary":3,"exposure":8.1,"demand":5.9,"remote":20,"city":"Hyderabad / Bengaluru / NCR","education":"Graduate","skills":["Policy","Review","Escalation","Trust & Safety"],"rationale":"AI moderation handles common cases, but edge cases, local language nuance and policy escalation still require human reviewers."},
-    {"id":"recruiter-tech","title":"Tech Recruiter","category":"Digital Operations","headcount":125000,"growth":6,"salary":9,"fresherSalary":3.5,"exposure":7.6,"demand":6.6,"remote":35,"city":"Bengaluru / NCR / Hyderabad","education":"Any Graduate","skills":["Sourcing","ATS","Screening","Stakeholder Mgmt"],"rationale":"Sourcing, screening and scheduling are automatable, but closing candidates and understanding team fit remain relationship-driven."},
-    {"id":"founder-ai-startup","title":"AI Startup Builder / Founder","category":"Startups & New Economy","headcount":35000,"growth":32,"salary":25,"fresherSalary":null,"exposure":6.0,"demand":8.1,"remote":50,"city":"Bengaluru / Hyderabad / Remote","education":"Any","skills":["Product","AI Agents","Sales","Fundraising"],"rationale":"Founders use AI as leverage rather than face replacement. The role is defined by opportunity selection, distribution and execution risk."},
-    {"id":"solutions-architect","title":"Solutions Architect","category":"Startups & New Economy","headcount":90000,"growth":17,"salary":30,"fresherSalary":null,"exposure":6.8,"demand":8.4,"remote":30,"city":"Bengaluru / Mumbai / NCR","education":"Bachelor's+","skills":["Architecture","Cloud","Pre-sales","Security"],"rationale":"AI helps create diagrams and proposals, but enterprise trust, context and accountable architecture decisions keep humans central."},
-    {"id":"ai-agent-developer","title":"AI Agent Developer","category":"Startups & New Economy","headcount":65000,"growth":54,"salary":18,"fresherSalary":7,"exposure":8.5,"demand":9.5,"remote":60,"city":"Remote / Bengaluru / Hyderabad","education":"Portfolio / Bachelor's","skills":["Agents","Tool Calling","RAG","Automation"],"rationale":"The role exists because of AI and uses AI heavily. Exposure is high, but market demand is currently expanding faster than automation pressure."}
+    {
+      "category": "AI & Data",
+      "city": "Bengaluru / Hyderabad",
+      "demand": 9.8,
+      "education": "Bachelor's+",
+      "exposure": 8.3,
+      "fresherSalary": 8,
+      "growth": 41,
+      "headcount": 63100,
+      "id": "ai-engineer",
+      "rationale": "Core work is digital and AI-assisted, but demand is expanding rapidly as companies build AI products. Exposure is high because tools reshape workflows, not because demand is weak.",
+      "remote": 45,
+      "salary": 20,
+      "skills": [
+        "LLMs",
+        "Python",
+        "RAG",
+        "MLOps"
+      ],
+      "title": "AI Engineer"
+    },
+    {
+      "category": "AI & Data",
+      "city": "Bengaluru / Hyderabad / Pune",
+      "demand": 9.4,
+      "education": "Bachelor's+",
+      "exposure": 8.1,
+      "fresherSalary": 9,
+      "growth": 35,
+      "headcount": 77100,
+      "id": "machine-learning-engineer",
+      "rationale": "The job is software-heavy and model-centric, so AI automates experimentation and coding. Demand remains strong where ML systems must be deployed reliably.",
+      "remote": 42,
+      "salary": 22,
+      "skills": [
+        "PyTorch",
+        "TensorFlow",
+        "Feature Stores",
+        "Model Serving"
+      ],
+      "title": "Machine Learning Engineer"
+    },
+    {
+      "category": "AI & Data",
+      "city": "Bengaluru / Delhi NCR / Mumbai",
+      "demand": 9.0,
+      "education": "Bachelor's+",
+      "exposure": 8.7,
+      "fresherSalary": 10.8,
+      "growth": 30,
+      "headcount": 169100,
+      "id": "data-scientist",
+      "rationale": "Analysis, reporting and modeling are almost entirely digital and increasingly automatable. The strongest roles shift toward product judgment, causal reasoning and stakeholder ownership.",
+      "remote": 48,
+      "salary": 15.0,
+      "skills": [
+        "Python",
+        "SQL",
+        "Statistics",
+        "GenAI Analytics"
+      ],
+      "title": "Data Scientist"
+    },
+    {
+      "category": "AI & Data",
+      "city": "Bengaluru / Hyderabad / Pune",
+      "demand": 9.1,
+      "education": "Bachelor's",
+      "exposure": 7.2,
+      "fresherSalary": 10.2,
+      "growth": 28,
+      "headcount": 198100,
+      "id": "data-engineer-big-data-engineer",
+      "rationale": "AI assists coding and pipeline generation, but production data reliability and platform context keep human ownership important.",
+      "remote": 40,
+      "salary": 18.0,
+      "skills": [
+        "Spark",
+        "Kafka",
+        "Snowflake",
+        "dbt"
+      ],
+      "title": "Data Engineer / Big Data Engineer"
+    },
+    {
+      "category": "AI & Data",
+      "city": "Hyderabad / Pune / Chennai",
+      "demand": 8.2,
+      "education": "Bachelor's",
+      "exposure": 7.5,
+      "fresherSalary": 5,
+      "growth": 26,
+      "headcount": 35900,
+      "id": "big-data-testing-engineer",
+      "rationale": "Test generation and validation can be accelerated by AI, but enterprise data quality remains domain-specific and integration-heavy.",
+      "remote": 35,
+      "salary": 15.1,
+      "skills": [
+        "ETL Testing",
+        "Spark",
+        "SQL",
+        "Automation"
+      ],
+      "title": "Big Data Testing Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Hyderabad / Delhi NCR",
+      "demand": 8.7,
+      "education": "Bachelor's",
+      "exposure": 9.0,
+      "fresherSalary": 7,
+      "growth": 12,
+      "headcount": 342100,
+      "id": "software-developer-sde-all-levels",
+      "rationale": "This is a fully digital occupation where coding assistants substantially change throughput. Demand may still rise because cheaper software creation expands the market.",
+      "remote": 36,
+      "salary": 17.27,
+      "skills": [
+        "Java",
+        "Python",
+        "System Design",
+        "APIs"
+      ],
+      "title": "Software Developer / SDE (all levels)"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.7,
+      "fresherSalary": null,
+      "growth": 22,
+      "headcount": 169100,
+      "id": "senior-software-engineer-sde-2",
+      "rationale": "Senior SDE work is AI-augmented, but system design, ownership and production tradeoffs keep demand strong in product and GCC tiers. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 36.0,
+      "skills": [],
+      "title": "Senior Software Engineer / SDE-2"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Delhi NCR",
+      "demand": 7.9,
+      "education": "Bachelor's",
+      "exposure": 8.9,
+      "fresherSalary": 5,
+      "growth": 13,
+      "headcount": 117400,
+      "id": "frontend-react-developer",
+      "rationale": "UI generation is increasingly automated, making exposure very high. Differentiation shifts to design judgment, performance and product polish.",
+      "remote": 45,
+      "salary": 14.5,
+      "skills": [
+        "React",
+        "TypeScript",
+        "UI Systems",
+        "Accessibility"
+      ],
+      "title": "Frontend / React Developer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Hyderabad / Pune",
+      "demand": 8.5,
+      "education": "Bachelor's",
+      "exposure": 8.4,
+      "fresherSalary": 7,
+      "growth": 14,
+      "headcount": 152500,
+      "id": "backend-api-engineer",
+      "rationale": "AI writes boilerplate and tests, but distributed-system reliability, performance and business rules remain harder to automate fully.",
+      "remote": 38,
+      "salary": 18.0,
+      "skills": [
+        "Java",
+        "Go",
+        "Microservices",
+        "Databases"
+      ],
+      "title": "Backend / API Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Delhi NCR / Mumbai",
+      "demand": 7.5,
+      "education": "Bachelor's",
+      "exposure": 8.0,
+      "fresherSalary": 6,
+      "growth": 11,
+      "headcount": 78000,
+      "id": "mobile-app-developer",
+      "rationale": "AI can generate common app screens and logic, but platform constraints, app quality and device testing keep the role moderately resilient.",
+      "remote": 36,
+      "salary": 15.3,
+      "skills": [
+        "Android",
+        "iOS",
+        "Flutter",
+        "React Native"
+      ],
+      "title": "Mobile App Developer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Chennai / Pune",
+      "demand": 6.9,
+      "education": "Bachelor's",
+      "exposure": 8.0,
+      "fresherSalary": 4,
+      "growth": 6,
+      "headcount": 100800,
+      "id": "qa-automation-engineer",
+      "rationale": "AI can generate tests and detect regressions, making routine QA highly exposed. Strategic quality engineering remains valuable.",
+      "remote": 30,
+      "salary": 10.7,
+      "skills": [
+        "Selenium",
+        "Playwright",
+        "API Testing",
+        "Automation"
+      ],
+      "title": "QA Automation Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Mumbai / Delhi NCR",
+      "demand": 8.3,
+      "education": "Bachelor's+",
+      "exposure": 7.1,
+      "fresherSalary": 12,
+      "growth": 16,
+      "headcount": 50400,
+      "id": "product-manager",
+      "rationale": "Research, specs and analytics are AI-assisted, but prioritization, customer empathy and cross-functional influence require human judgment.",
+      "remote": 30,
+      "salary": 32,
+      "skills": [
+        "Product Strategy",
+        "Analytics",
+        "AI PM",
+        "Stakeholders"
+      ],
+      "title": "Product Manager"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.2,
+      "fresherSalary": null,
+      "growth": 24,
+      "headcount": 42100,
+      "id": "product-manager-ai-products",
+      "rationale": "PDF identifies product management, especially AI-product PMs, as a high-demand skill area. AI assists analysis/docs, but customer judgment and prioritization remain human-led. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 33.6,
+      "skills": [],
+      "title": "Product Manager \u2013 AI Products"
+    },
+    {
+      "category": "Product & Design",
+      "city": "Bengaluru / Mumbai",
+      "demand": 7.2,
+      "education": "Portfolio",
+      "exposure": 8.6,
+      "fresherSalary": 5,
+      "growth": 9,
+      "headcount": 45600,
+      "id": "ux-product-designer",
+      "rationale": "Generative design tools produce variants quickly, increasing exposure. Senior designers remain valuable where user research and product taste matter.",
+      "remote": 40,
+      "salary": 14.9,
+      "skills": [
+        "Figma",
+        "Design Systems",
+        "Research",
+        "Prototyping"
+      ],
+      "title": "UX / Product Designer"
+    },
+    {
+      "category": "Cloud, DevOps & Security",
+      "city": "Bengaluru / Hyderabad / Pune",
+      "demand": 9.0,
+      "education": "Bachelor's / Certifications",
+      "exposure": 7.0,
+      "fresherSalary": 7,
+      "growth": 24,
+      "headcount": 136700,
+      "id": "cloud-engineer",
+      "rationale": "AI helps with IaC and troubleshooting, but cloud architecture, incidents and governance require accountable operators.",
+      "remote": 34,
+      "salary": 22.4,
+      "skills": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Kubernetes"
+      ],
+      "title": "Cloud Engineer"
+    },
+    {
+      "category": "Cloud, DevOps & Security",
+      "city": "Pune / Bengaluru / Hyderabad",
+      "demand": 8.5,
+      "education": "Bachelor's / Certifications",
+      "exposure": 7.3,
+      "fresherSalary": 6,
+      "growth": 18,
+      "headcount": 117400,
+      "id": "devops-engineer",
+      "rationale": "Automation is intrinsic to the role and AI adds another layer. Production ownership and incident response keep exposure below pure digital content roles.",
+      "remote": 33,
+      "salary": 18.3,
+      "skills": [
+        "CI/CD",
+        "Terraform",
+        "Docker",
+        "Observability"
+      ],
+      "title": "DevOps Engineer"
+    },
+    {
+      "category": "Cloud, DevOps & Security",
+      "city": "Bengaluru / Hyderabad / Delhi NCR",
+      "demand": 8.6,
+      "education": "Bachelor's",
+      "exposure": 6.8,
+      "fresherSalary": 8,
+      "growth": 20,
+      "headcount": 91100,
+      "id": "site-reliability-engineer-platform-engineer",
+      "rationale": "AI improves diagnostics, but reliability work involves high-stakes systems, accountability and operational judgment.",
+      "remote": 28,
+      "salary": 24.0,
+      "skills": [
+        "Reliability",
+        "Kubernetes",
+        "Linux",
+        "Incident Response"
+      ],
+      "title": "Site Reliability Engineer / Platform Engineer"
+    },
+    {
+      "category": "Cybersecurity",
+      "city": "Bengaluru / Delhi NCR / Mumbai",
+      "demand": 9.2,
+      "education": "Bachelor's / Certifications",
+      "exposure": 6.5,
+      "fresherSalary": 9.0,
+      "growth": 21,
+      "headcount": 97300,
+      "id": "cybersecurity-engineer-analyst",
+      "rationale": "AI automates triage and detection engineering, but adversarial dynamics and shortage of skilled professionals keep demand strong.",
+      "remote": 25,
+      "salary": 21.8,
+      "skills": [
+        "SOC",
+        "SIEM",
+        "Threat Intel",
+        "Cloud Security"
+      ],
+      "title": "Cybersecurity Engineer / Analyst"
+    },
+    {
+      "category": "Cybersecurity",
+      "city": "Bengaluru / Pune / Delhi NCR",
+      "demand": 9.0,
+      "education": "Bachelor's / Certifications",
+      "exposure": 6.4,
+      "fresherSalary": 8,
+      "growth": 22,
+      "headcount": 54400,
+      "id": "security-engineer",
+      "rationale": "AI helps attackers and defenders, increasing productivity but not eliminating expert review, architecture and accountability.",
+      "remote": 28,
+      "salary": 26,
+      "skills": [
+        "AppSec",
+        "IAM",
+        "Zero Trust",
+        "Pentesting"
+      ],
+      "title": "Security Engineer"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "Tier-2 Hubs / Delhi NCR / Bengaluru",
+      "demand": 7.4,
+      "education": "Graduate / English",
+      "exposure": 7.9,
+      "fresherSalary": 3,
+      "growth": 19,
+      "headcount": 220800,
+      "id": "bpo-ites-customer-support",
+      "rationale": "Conversational AI can automate common support interactions. Complex escalation, empathy and regulated processes keep humans in the loop.",
+      "remote": 32,
+      "salary": 4.35,
+      "skills": [
+        "CRM",
+        "Voice Process",
+        "Communication",
+        "Escalations"
+      ],
+      "title": "BPO / ITES Customer Support"
+    },
+    {
+      "category": "Product & Design",
+      "city": "Bengaluru / Mumbai / Delhi NCR",
+      "demand": 7.7,
+      "education": "Bachelor's / MBA",
+      "exposure": 7.8,
+      "fresherSalary": 5,
+      "growth": 10,
+      "headcount": 84100,
+      "id": "business-analyst",
+      "rationale": "AI drafts requirements and analyses data quickly, but stakeholder alignment and domain interpretation remain human-led.",
+      "remote": 31,
+      "salary": 13.2,
+      "skills": [
+        "Requirements",
+        "SQL",
+        "Process Mapping",
+        "Stakeholders"
+      ],
+      "title": "Business Analyst"
+    },
+    {
+      "category": "GCC & Enterprise",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.8,
+      "fresherSalary": null,
+      "growth": 27,
+      "headcount": 292700,
+      "id": "gcc-engineering-center-roles",
+      "rationale": "PDF says GCCs are the dominant 2024\u201325 hiring story: ~1,700\u20131,950 centers, ~2.4M workers and about 27% of IT hiring. Work is digital and AI-augmented. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 21.6,
+      "skills": [],
+      "title": "GCC Engineering Center Roles"
+    },
+    {
+      "category": "GCC & Enterprise",
+      "city": "Bengaluru / Hyderabad / Chennai",
+      "demand": 8.9,
+      "education": "Bachelor's+",
+      "exposure": 6.2,
+      "fresherSalary": null,
+      "growth": 18,
+      "headcount": 34300,
+      "id": "gcc-engineering-manager",
+      "rationale": "Managerial reporting is AI-assisted, but hiring, execution ownership, mentoring and stakeholder trust are harder to replace.",
+      "remote": 18,
+      "salary": 45,
+      "skills": [
+        "Leadership",
+        "Delivery",
+        "Architecture",
+        "Hiring"
+      ],
+      "title": "GCC Engineering Manager"
+    },
+    {
+      "category": "GCC & Enterprise",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.7,
+      "fresherSalary": null,
+      "growth": 24,
+      "headcount": 104300,
+      "id": "bfsi-gcc-technology-roles",
+      "rationale": "BFSI GCCs in Mumbai/NCR/Hyderabad hire engineering, risk, data and platform roles. High digital exposure but strong enterprise demand. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 26.4,
+      "skills": [],
+      "title": "BFSI GCC Technology Roles"
+    },
+    {
+      "category": "GCC & Enterprise",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.2,
+      "fresherSalary": null,
+      "growth": 22,
+      "headcount": 58700,
+      "id": "pharma-healthcare-gcc-tech-roles",
+      "rationale": "PDF highlights pharma and healthcare GCC growth in Hyderabad and other hubs. Digital analytics and engineering work is AI-augmented. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 21.6,
+      "skills": [],
+      "title": "Pharma / Healthcare GCC Tech Roles"
+    },
+    {
+      "category": "ER&D & Manufacturing Tech",
+      "city": "Chennai / Pune / Bengaluru",
+      "demand": 8.0,
+      "education": "Bachelor's",
+      "exposure": 7.1,
+      "fresherSalary": 5,
+      "growth": 15,
+      "headcount": 84100,
+      "id": "automotive-erandd-software-engineer",
+      "rationale": "Software components are AI-assistable, but safety, hardware integration and compliance lower exposure relative to web software.",
+      "remote": 18,
+      "salary": 16.2,
+      "skills": [
+        "Embedded C",
+        "AUTOSAR",
+        "ADAS",
+        "Testing"
+      ],
+      "title": "Automotive ER&D / Software Engineer"
+    },
+    {
+      "category": "ER&D & Manufacturing Tech",
+      "city": "Bengaluru / Chennai / Pune",
+      "demand": 7.8,
+      "education": "Bachelor's",
+      "exposure": 6.7,
+      "fresherSalary": 5,
+      "growth": 12,
+      "headcount": 84600,
+      "id": "embedded-systems-engineer",
+      "rationale": "Code generation helps, but hardware constraints, lab debugging and real-time reliability create a physical-world moat.",
+      "remote": 15,
+      "salary": 14,
+      "skills": [
+        "C/C++",
+        "RTOS",
+        "Firmware",
+        "Hardware Debug"
+      ],
+      "title": "Embedded Systems Engineer"
+    },
+    {
+      "category": "ER&D & Manufacturing Tech",
+      "city": "Bengaluru / Hyderabad / Delhi NCR",
+      "demand": 8.7,
+      "education": "Bachelor's+",
+      "exposure": 6.9,
+      "fresherSalary": 8,
+      "growth": 19,
+      "headcount": 44300,
+      "id": "vlsi-semiconductor-engineer",
+      "rationale": "EDA workflows benefit from AI, but chip design requires deep verification, toolchain expertise and high-cost error prevention.",
+      "remote": 20,
+      "salary": 20,
+      "skills": [
+        "RTL",
+        "Verification",
+        "EDA",
+        "SystemVerilog"
+      ],
+      "title": "VLSI / Semiconductor Engineer"
+    },
+    {
+      "category": "ER&D & Manufacturing Tech",
+      "city": "Chennai / Pune",
+      "demand": 7.2,
+      "education": "Bachelor's / Diploma",
+      "exposure": 5.5,
+      "fresherSalary": 4.5,
+      "growth": 11,
+      "headcount": 56400,
+      "id": "manufacturing-automation-engineer",
+      "rationale": "AI assists monitoring and maintenance, but plant-floor presence, equipment integration and safety reduce digital-only exposure.",
+      "remote": 8,
+      "salary": 12,
+      "skills": [
+        "PLC",
+        "SCADA",
+        "Robotics",
+        "Industrial IoT"
+      ],
+      "title": "Manufacturing Automation Engineer"
+    },
+    {
+      "category": "GCC & Enterprise",
+      "city": "Bengaluru / Pune / Chennai",
+      "demand": 6.8,
+      "education": "Bachelor's",
+      "exposure": 7.4,
+      "fresherSalary": 4,
+      "growth": 7,
+      "headcount": 209600,
+      "id": "erp-enterprise-consultant",
+      "rationale": "Documentation, configuration guidance and testing are AI-assistable, while client-specific implementation and change management remain human-heavy.",
+      "remote": 22,
+      "salary": 12,
+      "skills": [
+        "SAP",
+        "Oracle",
+        "Business Process",
+        "Integration"
+      ],
+      "title": "ERP / Enterprise Consultant"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "",
+      "demand": 6.2,
+      "education": "Diploma / Bachelor's",
+      "exposure": 6.9,
+      "fresherSalary": 3.5,
+      "growth": 5,
+      "headcount": 274100,
+      "id": "it-support-specialist",
+      "rationale": "Chatbots and self-healing tools reduce repetitive tickets, but physical device support and escalation handling remain necessary.",
+      "remote": 20,
+      "salary": 6,
+      "skills": [
+        "Helpdesk",
+        "Windows",
+        "Networking",
+        "ITSM"
+      ],
+      "title": "IT Support Specialist"
+    },
+    {
+      "category": "BFSI & Enterprise",
+      "city": "Mumbai / Bengaluru / Delhi NCR",
+      "demand": 8.2,
+      "education": "Bachelor's",
+      "exposure": 8.2,
+      "fresherSalary": 7,
+      "growth": 13,
+      "headcount": 104800,
+      "id": "fintech-bfsi-engineer",
+      "rationale": "Financial software is digital and AI-assisted, but compliance, auditability and domain risk limit full automation.",
+      "remote": 25,
+      "salary": 22,
+      "skills": [
+        "Java",
+        "Payments",
+        "Risk",
+        "Cloud"
+      ],
+      "title": "FinTech / BFSI Engineer"
+    },
+    {
+      "category": "BFSI & Enterprise",
+      "city": "Mumbai / Delhi NCR / Bengaluru",
+      "demand": 7.8,
+      "education": "Bachelor's",
+      "exposure": 8.4,
+      "fresherSalary": 5,
+      "growth": 9,
+      "headcount": 64500,
+      "id": "risk-fraud-analyst",
+      "rationale": "Pattern analysis and report writing are highly automatable. Human review remains important for exceptions, regulation and accountability.",
+      "remote": 26,
+      "salary": 11,
+      "skills": [
+        "SQL",
+        "Fraud Models",
+        "Excel",
+        "Investigation"
+      ],
+      "title": "Risk / Fraud Analyst"
+    },
+    {
+      "category": "BFSI & Enterprise",
+      "city": "Hyderabad / Bengaluru / Pune",
+      "demand": 7.8,
+      "education": "Bachelor's / Certifications",
+      "exposure": 7.9,
+      "fresherSalary": 6,
+      "growth": 12,
+      "headcount": 68500,
+      "id": "salesforce-crm-developer",
+      "rationale": "AI accelerates configuration and code, while enterprise integrations and business-process nuance preserve demand.",
+      "remote": 34,
+      "salary": 16,
+      "skills": [
+        "Salesforce",
+        "Apex",
+        "CRM",
+        "Integration"
+      ],
+      "title": "Salesforce / CRM Developer"
+    },
+    {
+      "category": "Digital Operations",
+      "city": "Bengaluru / Pune",
+      "demand": 5.8,
+      "education": "Bachelor's",
+      "exposure": 9.2,
+      "fresherSalary": 4,
+      "growth": 3,
+      "headcount": 28200,
+      "id": "technical-writer",
+      "rationale": "Drafting and summarization are core AI strengths. The surviving premium is in technical accuracy, structure and developer empathy.",
+      "remote": 55,
+      "salary": 10,
+      "skills": [
+        "Docs",
+        "APIs",
+        "Markdown",
+        "Information Architecture"
+      ],
+      "title": "Technical Writer"
+    },
+    {
+      "category": "Digital Operations",
+      "city": "Mumbai / Bengaluru / Delhi NCR",
+      "demand": 7.1,
+      "education": "Any Graduate",
+      "exposure": 8.8,
+      "fresherSalary": 3.5,
+      "growth": 11,
+      "headcount": 120900,
+      "id": "digital-marketing-specialist",
+      "rationale": "Content, keyword research and campaign variants are highly automatable. Strategy, brand judgment and conversion ownership become more important.",
+      "remote": 45,
+      "salary": 8,
+      "skills": [
+        "SEO",
+        "Ads",
+        "Analytics",
+        "Content"
+      ],
+      "title": "Digital Marketing Specialist"
+    },
+    {
+      "category": "Digital Operations",
+      "city": "Hyderabad / Bengaluru / Delhi NCR",
+      "demand": 5.9,
+      "education": "Graduate",
+      "exposure": 8.1,
+      "fresherSalary": 3,
+      "growth": 5,
+      "headcount": 72600,
+      "id": "content-moderator",
+      "rationale": "AI moderation handles common cases, but edge cases, local language nuance and policy escalation still require human reviewers.",
+      "remote": 20,
+      "salary": 4,
+      "skills": [
+        "Policy",
+        "Review",
+        "Escalation",
+        "Trust & Safety"
+      ],
+      "title": "Content Moderator"
+    },
+    {
+      "category": "Digital Operations",
+      "city": "Bengaluru / Delhi NCR / Hyderabad",
+      "demand": 6.6,
+      "education": "Any Graduate",
+      "exposure": 7.6,
+      "fresherSalary": 3.5,
+      "growth": 6,
+      "headcount": 50400,
+      "id": "tech-recruiter",
+      "rationale": "Sourcing, screening and scheduling are automatable, but closing candidates and understanding team fit remain relationship-driven.",
+      "remote": 35,
+      "salary": 9,
+      "skills": [
+        "Sourcing",
+        "ATS",
+        "Screening",
+        "Stakeholder Mgmt"
+      ],
+      "title": "Tech Recruiter"
+    },
+    {
+      "category": "Startups & New Economy",
+      "city": "Bengaluru / Hyderabad",
+      "demand": 8.1,
+      "education": "Any",
+      "exposure": 6.0,
+      "fresherSalary": null,
+      "growth": 32,
+      "headcount": 14100,
+      "id": "ai-startup-builder-founder",
+      "rationale": "Founders use AI as leverage rather than face replacement. The role is defined by opportunity selection, distribution and execution risk.",
+      "remote": 50,
+      "salary": 25,
+      "skills": [
+        "Product",
+        "AI Agents",
+        "Sales",
+        "Fundraising"
+      ],
+      "title": "AI Startup Builder / Founder"
+    },
+    {
+      "category": "Startups & New Economy",
+      "city": "Bengaluru / Mumbai / Delhi NCR",
+      "demand": 8.4,
+      "education": "Bachelor's+",
+      "exposure": 6.8,
+      "fresherSalary": null,
+      "growth": 17,
+      "headcount": 36300,
+      "id": "solutions-architect",
+      "rationale": "AI helps create diagrams and proposals, but enterprise trust, context and accountable architecture decisions keep humans central.",
+      "remote": 30,
+      "salary": 30,
+      "skills": [
+        "Architecture",
+        "Cloud",
+        "Pre-sales",
+        "Security"
+      ],
+      "title": "Solutions Architect"
+    },
+    {
+      "category": "Startups & New Economy",
+      "city": "Bengaluru / Hyderabad",
+      "demand": 9.5,
+      "education": "Portfolio / Bachelor's",
+      "exposure": 8.5,
+      "fresherSalary": 7,
+      "growth": 54,
+      "headcount": 26200,
+      "id": "ai-agent-developer",
+      "rationale": "The role exists because of AI and uses AI heavily. Exposure is high, but market demand is currently expanding faster than automation pressure.",
+      "remote": 60,
+      "salary": 18,
+      "skills": [
+        "Agents",
+        "Tool Calling",
+        "RAG",
+        "Automation"
+      ],
+      "title": "AI Agent Developer"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.8,
+      "fresherSalary": 13.2,
+      "growth": 54,
+      "headcount": 61300,
+      "id": "generative-ai-llm-engineer",
+      "rationale": "GenAI/LLM roles are fully digital and rapidly changing, but demand is structurally strong as AI becomes core infrastructure across Indian providers. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 26.4,
+      "skills": [],
+      "title": "Generative AI / LLM Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.9,
+      "fresherSalary": null,
+      "growth": 18,
+      "headcount": 51700,
+      "id": "faang-tier-1-product-engineer",
+      "rationale": "PDF notes Tier-1 product/FAANG compensation around \u20b945\u201355LPA mid-level and senior packages up to \u20b91Cr+. These roles are highly digital but remain premium. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 57.6,
+      "skills": [],
+      "title": "FAANG / Tier-1 Product Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 6.8,
+      "fresherSalary": null,
+      "growth": 14,
+      "headcount": 30700,
+      "id": "technical-program-manager",
+      "rationale": "TPM work is knowledge-heavy and AI-assisted through planning/docs, but coordination and stakeholder management reduce direct automation risk. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 30.0,
+      "skills": [],
+      "title": "Technical Program Manager"
+    },
+    {
+      "category": "Cloud, DevOps & Security",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.2,
+      "fresherSalary": null,
+      "growth": 20,
+      "headcount": 47300,
+      "id": "kubernetes-terraform-engineer",
+      "rationale": "Infrastructure-as-code is digital and AI-assisted. Demand is supported by cloud and platform engineering growth in India. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 21.6,
+      "skills": [],
+      "title": "Kubernetes / Terraform Engineer"
+    },
+    {
+      "category": "Cybersecurity",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.3,
+      "fresherSalary": null,
+      "growth": 18,
+      "headcount": 58700,
+      "id": "soc-analyst",
+      "rationale": "Routine alert triage has high AI augmentation potential. However, cybersecurity demand and shortage keep hiring resilient. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 10.8,
+      "skills": [],
+      "title": "SOC Analyst"
+    },
+    {
+      "category": "Cybersecurity",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 6.4,
+      "fresherSalary": null,
+      "growth": 20,
+      "headcount": 28000,
+      "id": "security-architect-grc-lead",
+      "rationale": "Governance, architecture and risk roles use AI but rely on policy, business context and accountability. Demand is lifted by cybersecurity shortage. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 38.4,
+      "skills": [],
+      "title": "Security Architect / GRC Lead"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.6,
+      "fresherSalary": null,
+      "growth": 8,
+      "headcount": 266400,
+      "id": "it-services-fresher-trainee-engineer",
+      "rationale": "PDF notes IT services freshers at \u20b93.5\u20137LPA and large onboarding plans, while legacy work faces automation pressure. Entry-level digital tasks are strongly AI-exposed. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 5.04,
+      "skills": [],
+      "title": "IT Services Fresher / Trainee Engineer"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.4,
+      "fresherSalary": null,
+      "growth": -6,
+      "headcount": 227800,
+      "id": "it-services-legacy-maintenance-engineer",
+      "rationale": "PDF describes a bifurcation: advanced skills hiring while legacy services consolidate. Routine maintenance/support work is highly exposed to automation. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 9.0,
+      "skills": [],
+      "title": "IT Services Legacy Maintenance Engineer"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.4,
+      "fresherSalary": 5.4,
+      "growth": 5,
+      "headcount": 149900,
+      "id": "application-support-engineer",
+      "rationale": "Support workflows are digital and increasingly automatable, but enterprise SLAs and customer context preserve some human need. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 7.8,
+      "skills": [],
+      "title": "Application Support Engineer"
+    },
+    {
+      "category": "IT Services & BPO",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 9.4,
+      "fresherSalary": null,
+      "growth": -10,
+      "headcount": 127100,
+      "id": "data-entry-back-office-operations",
+      "rationale": "Routine information processing is maximum AI exposure. PDF's automation headwinds and Karpathy-style rubric make this a high-risk digital operations category. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 3.6,
+      "skills": [],
+      "title": "Data Entry / Back Office Operations"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.7,
+      "fresherSalary": null,
+      "growth": 25,
+      "headcount": 28000,
+      "id": "ai-prompt-engineer-ai-operations",
+      "rationale": "Prompt/GenAI operations are emerging digital roles. Demand is rising with AI adoption, but tooling changes quickly and automates parts of the workflow. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 13.8,
+      "skills": [],
+      "title": "AI Prompt Engineer / AI Operations"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8,
+      "fresherSalary": null,
+      "growth": 14,
+      "headcount": 74500,
+      "id": "power-bi-tableau-analyst",
+      "rationale": "PDF lists data analysis, SQL, Power BI and Tableau among top skills. Reporting is highly AI-assisted and exposed. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 11.4,
+      "skills": [],
+      "title": "Power BI / Tableau Analyst"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.8,
+      "fresherSalary": null,
+      "growth": 16,
+      "headcount": 84100,
+      "id": "sql-analytics-engineer",
+      "rationale": "Analytics engineering is digital and AI-assisted. Demand is supported by data engineering and business intelligence growth. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 13.8,
+      "skills": [],
+      "title": "SQL / Analytics Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.6,
+      "fresherSalary": null,
+      "growth": 30,
+      "headcount": 68400,
+      "id": "startup-full-stack-engineer",
+      "rationale": "PDF notes Hyderabad startup hiring up +30% YoY and unicorn hiring strength. Startup full-stack work is highly digital and AI-augmented. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 19.8,
+      "skills": [],
+      "title": "Startup Full-Stack Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "Bengaluru / Pune / Chennai",
+      "demand": 8.8,
+      "education": "Bachelor's",
+      "exposure": 8.8,
+      "fresherSalary": 6,
+      "growth": 22,
+      "headcount": 249900,
+      "id": "full-stack-developer",
+      "rationale": "Frontend and backend implementation are highly AI-assistable. Higher-value work moves toward architecture, product reasoning and security-aware delivery.",
+      "remote": 42,
+      "salary": 16,
+      "skills": [
+        "React",
+        "Node.js",
+        "Databases",
+        "Cloud"
+      ],
+      "title": "Full-Stack Developer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.6,
+      "fresherSalary": null,
+      "growth": 22,
+      "headcount": 49100,
+      "id": "unicorn-product-engineer",
+      "rationale": "Indian unicorns such as Flipkart, Swiggy, Zomato, Razorpay and PhonePe are noted as premium hirers. Digital engineering work remains high exposure but high demand. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 30.0,
+      "skills": [],
+      "title": "Unicorn Product Engineer"
+    },
+    {
+      "category": "Software & Product",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.5,
+      "fresherSalary": null,
+      "growth": 10,
+      "headcount": 35900,
+      "id": "remote-global-contractor-engineering-data",
+      "rationale": "PDF notes pure remote work is concentrated in startups/global remote contractor roles. These are fully digital and therefore high AI exposure. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 22.2,
+      "skills": [],
+      "title": "Remote Global Contractor - Engineering/Data"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 8.4,
+      "fresherSalary": null,
+      "growth": 30,
+      "headcount": 39400,
+      "id": "full-stack-data-scientist",
+      "rationale": "PDF specifically notes Full-Stack Data Scientist growth around +30% in Naukri Apr 2025. The role combines coding, ML and analytics, making it high exposure and high growth. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 21.0,
+      "skills": [],
+      "title": "Full-Stack Data Scientist"
+    },
+    {
+      "category": "AI & Data",
+      "city": "",
+      "demand": null,
+      "education": null,
+      "exposure": 7.5,
+      "fresherSalary": null,
+      "growth": 28,
+      "headcount": 49100,
+      "id": "data-platform-specialist",
+      "rationale": "PDF notes Data Platform Specialist growth around +28%. AI boosts productivity, but platform architecture and reliability still require human engineering judgment. Data layer is a 2024\u20132025 India tech-market proxy derived from the uploaded PDF brief; not an official employment forecast.",
+      "remote": null,
+      "salary": 20.4,
+      "skills": [],
+      "title": "Data Platform Specialist"
+    }
   ]
 }
